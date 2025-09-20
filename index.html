@@ -4,77 +4,119 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portafolio | Garu006</title>
+
+  <!-- Meta básicas -->
+  <meta name="description" content="Portafolio de Gabriel Rojas (Garu006): proyectos, tecnologías y contacto." />
+  <meta property="og:title" content="Portafolio | Garu006" />
+  <meta property="og:description" content="Proyectos destacados y contacto de Gabriel Rojas (Garu006)." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://garu006.github.io/" />
+
   <style>
-    body {
+    :root{
+      --maxw: 900px;
+      --radius: 12px;
+      --ink: #0a0a0a;
+      --sub: #4b5563;
+      --line: #e5e7eb;
+      --link: #0a66c2;
+      --card-bg: #ffffff;
+      --bg: #fafafa;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --ink:#e5e7eb; --sub:#9ca3af; --line:#2b2f36; --link:#78a6e3;
+        --card-bg:#0f1216; --bg:#0b0e12;
+      }
+    }
+
+    html,body{height:100%}
+    body{
       font-family: system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      margin: 0;
-      padding: 2rem;
-      line-height: 1.6;
+      margin:0; padding:2rem; line-height:1.6; color:var(--ink); background:var(--bg);
     }
-    header {
-      max-width: 900px;
-      margin: auto;
+    header, .grid, footer{max-width:var(--maxw); margin-inline:auto}
+    header{margin-bottom:1rem}
+    h1{margin:.2rem 0}
+    p{color:var(--sub); margin:.5rem 0 0}
+
+    .badges{margin-top:.75rem}
+    .badges img{height:28px; margin-right:6px} /* decorativo */
+    .badges img[aria-hidden="true"]{filter:saturate(.95)}
+
+    hr{border:none; border-top:1px solid var(--line); margin:1.25rem 0}
+
+    .grid{
+      margin:1.25rem auto 2rem;
+      display:grid; gap:16px;
+      grid-template-columns: 1fr;
     }
-    h1 { margin: .2rem 0; }
-    .badges img { height: 28px; margin-right: 6px; }
-    .grid {
-      max-width: 900px;
-      margin: 1.5rem auto;
-      display: grid;
-      gap: 16px;
+    @media (min-width: 760px){
+      .grid{ grid-template-columns: 1fr 1fr; }
     }
-    .card {
-      border: 1px solid #eee;
-      border-radius: 12px;
-      padding: 16px;
+
+    .card{
+      background:var(--card-bg);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:16px;
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
     }
-    a { color: #0a66c2; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    footer {
-      margin-top: 2rem;
-      text-align: center;
+    .card:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(0,0,0,.08);
+      border-color: rgba(100,149,237,.35);
     }
-    footer a { margin: 0 8px; }
+    .card h3{margin:0 0 .25rem}
+    .card p{margin:.25rem 0 .75rem}
+
+    a{color:var(--link); text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    footer{margin-top:2rem; text-align:center; color:var(--sub)}
+    footer a{margin:0 8px}
   </style>
 </head>
 <body>
   <header>
-    <h1>¡Hola! Mi nombre es Gabriel Rojas (Garu006)</h1>
+    <h1>¡Hola! Soy Gabriel Rojas (Garu006)</h1>
     <p>Ing. en Sistemas + doble titulación en Negocios Internacionales (UAM). Me gusta construir proyectos que mezclen tecnología, emprendimiento y comunidad.</p>
-    <div class="badges">
-      <img alt="Python" src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white">
-      <img alt="C" src="https://img.shields.io/badge/C-00599C?logo=c&logoColor=white">
-      <img alt="C++" src="https://img.shields.io/badge/C++-00599C?logo=c%2B%2B&logoColor=white">
-      <img alt="C#" src="https://img.shields.io/badge/C%23-239120?logo=c-sharp&logoColor=white">
-      <img alt="Java" src="https://img.shields.io/badge/Java-ED8B00?logo=openjdk&logoColor=white">
-      <img alt="SQL" src="https://img.shields.io/badge/SQL-025E8C?logo=postgresql&logoColor=white">
+    <div class="badges" aria-hidden="true">
+      <img alt="" src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white">
+      <img alt="" src="https://img.shields.io/badge/C-00599C?logo=c&logoColor=white">
+      <img alt="" src="https://img.shields.io/badge/C++-00599C?logo=c%2B%2B&logoColor=white">
+      <img alt="" src="https://img.shields.io/badge/C%23-239120?logo=c-sharp&logoColor=white">
+      <img alt="" src="https://img.shields.io/badge/Java-ED8B00?logo=openjdk&logoColor=white">
+      <img alt="" src="https://img.shields.io/badge/SQL-025E8C?logo=postgresql&logoColor=white">
     </div>
   </header>
 
-  <section class="grid">
+  <hr />
+
+  <section class="grid" aria-label="Proyectos">
     <div class="card">
       <h3>4to-Semestre</h3>
       <p>Prácticas, apuntes y proyectos de Ingeniería en Sistemas.</p>
-      <a href="https://github.com/Garu006/4to-Semestre">Ver repositorio</a>
+      <a href="https://github.com/Garu006/4to-Semestre" target="_blank" rel="noopener">Ver repositorio →</a>
     </div>
     <div class="card">
       <h3>README de perfil</h3>
       <p>Mi perfil de GitHub con stack, metas y proyectos destacados.</p>
-      <a href="https://github.com/Garu006/Garu006">Abrir</a>
+      <a href="https://github.com/Garu006/Garu006" target="_blank" rel="noopener">Abrir →</a>
     </div>
     <div class="card">
       <h3>Calculadora Álgebra Lineal</h3>
       <p>Versión en Django con operaciones Gauss-Jordan.</p>
-      <a href="https://github.com/johaneris/Calculadora_Algebra_Lineal">Abrir</a>
+      <a href="https://github.com/johaneris/Calculadora_Algebra_Lineal" target="_blank" rel="noopener">Abrir →</a>
     </div>
   </section>
 
   <footer>
     <p>
-      <a href="mailto:garojas@uamv.edu.ni">Email</a>
-      <a href="https://www.linkedin.com/in/gabriel-antonio-rojas-uriarte-1a9375365/">LinkedIn</a>
-      <a href="https://www.instagram.com/dh.garu_/">Instagram</a>
-      <a href="https://github.com/Garu006">GitHub</a>
+      <a href="mailto:garojas@uamv.edu.ni">Email</a> ·
+      <a href="https://www.linkedin.com/in/gabriel-antonio-rojas-uriarte-1a9375365/" target="_blank" rel="noopener">LinkedIn</a> ·
+      <a href="https://www.instagram.com/dh.garu_/" target="_blank" rel="noopener">Instagram</a> ·
+      <a href="https://github.com/Garu006" target="_blank" rel="noopener">GitHub</a>
     </p>
   </footer>
 </body>
